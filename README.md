@@ -1,38 +1,83 @@
 # 📈 Quantitative Stock Analysis Dashboard
 
-> A professional financial data visualization tool built with **Streamlit**, **Pandas**, and **yfinance**.[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Ffearlessfk%2FFinance_Dashboard)]
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://finance-dashboard-demo.streamlit.app/)
+![Python](https://img.shields.io/badge/Python-3.9+-blue?style=flat&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## 🚀 Features (核心功能)
-
-- **Real-time Data:** Fetches live stock data (US & China Concept Stocks) via Yahoo Finance.[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Ffearlessfk%2FFinance_Dashboard)]
-- **Technical Analysis:** Automated calculation of **MACD**, **RSI**, and **Moving Averages (SMA/EMA)**.
-- **Signal Detection:** Built-in logic to identify **Overbought/Oversold** signals and **Golden/Death Crosses**.[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Ffearlessfk%2FFinance_Dashboard)]
-- **Interactive Charts:** Professional candlestick charts powered by `mplfinance`/`plotly`.[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Ffearlessfk%2FFinance_Dashboard)]
-
-## 🛠️ Tech Stack (技术栈)[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Ffearlessfk%2FFinance_Dashboard)]
-
-![Python](https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-Framework-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Ffearlessfk%2FFinance_Dashboard)]
-
-## 📸 Demo (效果截图)
-
-> *(明天部署成功后，这里放一张你网页的截图！一定要放！)*
-
-## 📦 How to Run (如何运行)
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/fearlessfk/Finance_Dashboard.git
-   ```[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Ffearlessfk%2FFinance_Dashboard)]
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Ffearlessfk%2FFinance_Dashboard)]
-3. Run the app:
-   ```bash
-   streamlit run main.py
-   ```[[1](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Ffearlessfk%2FFinance_Dashboard)]
+> **A professional financial data visualization tool built with Streamlit, Pandas, and yfinance.**  
+> Designed for real-time market analysis, automated technical indicator calculation (MACD/RSI), and trading signal detection.
 
 ---
-*Created by [Your Name] | Targeting Quantitative Finance & Data Science Roles*
+
+## 📸 Project Demo (效果展示)
+
+### 1. Market Overview (市场概览)
+Real-time price tracking with professional Candlestick charts and key metrics cards.
+![Main Interface](assets/demo_main.png)
+*(Replace `assets/demo_main.png` with your actual screenshot path)*
+
+### 2. Technical Analysis (技术指标)
+Automated calculation of **MACD**, **RSI**, and **Moving Averages**. The system automatically flags **Overbought/Oversold** conditions.
+![Indicators](assets/demo_indicators.png)
+
+### 3. Return Analysis (收益率分析)
+Comparative analysis of daily returns and cumulative performance.
+![Returns](assets/demo_analysis.png)
+
+---
+
+## 🚀 Key Features (核心功能)
+
+- **📊 Real-time Data Engine:** 
+  - Fetches live market data (US Stocks & China Concept Stocks) via `yfinance` API.
+  - Performance optimized with `@st.cache_data`.
+
+- **🧮 Advanced Quantitative Logic:** 
+  - **Trend Analysis:** Simple/Exponential Moving Averages (SMA/EMA).
+  - **Momentum Indicators:** RSI (Relative Strength Index) calculation implemented from scratch using Pandas (No "black box" libraries).
+  - **Signal Detection:** MACD logic to identify Golden/Death Crosses.
+
+- **🎨 Professional UI/UX:** 
+  - Bloomberg-style layout with top-level Metric Cards.
+  - Interactive charts powered by `mplfinance` / `plotly`.
+  - Dynamic visual feedback (Green/Red indicators for price changes).
+
+---
+
+## 🛠️ Tech Stack (技术栈)
+
+| Category | Technologies |
+|----------|--------------|
+| **Core Logic** | `Python` |
+| **Data Processing** | `Pandas`, `NumPy` |
+| **Visualization** | `Streamlit`, `Matplotlib`, `Mplfinance` |
+| **Data Source** | `yfinance` |
+
+---
+
+## 📦 How to Run Locally (本地运行)
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/fearlessfk/Finance_Dashboard.git
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+
+3. **Launch the app:**
+   ```bash
+   streamlit run main.py
+
+---
+
+
+## 🔮 Future Roadmap (未来规划)
+
+-[ ]Integrate LSTM (Deep Learning) for price prediction.
+
+-[ ]Add Portfolio Optimization (Markowitz Efficient Frontier).
+
+-[ ]Implement SQL Database for historical data storage.
+
+Created by [Alex Liu] | Targeting Quantitative Finance & Data Science Roles
