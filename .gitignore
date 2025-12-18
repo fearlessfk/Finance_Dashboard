@@ -1,0 +1,22 @@
+# 在当前目录创建 .gitignore 文件（若已存在则覆盖原有内容）
+@"
+# Python 缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE 配置文件
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Streamlit 配置/缓存
+.streamlit/
+*.db
+*.log
+
+# 系统临时文件
+.DS_Store
+Thumbs.db
+"@ | Out-File -FilePath .\.gitignore -Encoding utf8
