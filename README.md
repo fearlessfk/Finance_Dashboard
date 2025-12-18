@@ -13,16 +13,16 @@
 
 ### 1. Market Overview (市场概览)
 Real-time price tracking with professional Candlestick charts and key metrics cards.
-![Main Interface](assets/demo_main.png)
+![Main Interface](demo_main.png.png)
 *(Replace `assets/demo_main.png` with your actual screenshot path)*
 
 ### 2. Technical Analysis (技术指标)
 Automated calculation of **MACD**, **RSI**, and **Moving Averages**. The system automatically flags **Overbought/Oversold** conditions.
-![Indicators](assets/demo_indicators.png)
+![Indicators](demo_indicators.png.png)
 
 ### 3. Return Analysis (收益率分析)
 Comparative analysis of daily returns and cumulative performance.
-![Returns](assets/demo_analysis.png)
+![Returns](demo_analysis.png.png)
 
 ---
 
