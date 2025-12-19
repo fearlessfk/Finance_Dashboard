@@ -1,17 +1,12 @@
 # 核心框架
 streamlit==1.52.2
 
-# 金融数据相关
+# 金融数据/绘图核心依赖
 yfinance==0.1.74
-mplfinance==0.12.10b0  # mplfinance 稳定版本，兼容Python 3.9
+mplfinance==0.12.9b7  # 适配Python3.9的稳定版
+plotly==5.17.0        # 与streamlit/mplfinance无冲突的版本
 
-# 数据处理基础包
-pandas==2.3.3
-numpy==2.3.5
-
-# 可选：mplfinance 依赖的绘图包（确保兼容）
-matplotlib==3.8.0streamlit 
-yfinance>=0.2.31 
-pandas 
-numpy
-plotly
+# 数据处理基础包（版本向下兼容）
+pandas==1.5.3
+numpy==1.23.5
+matplotlib==3.7.1   
