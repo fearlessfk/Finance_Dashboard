@@ -13,7 +13,7 @@
 
 ### 1. Market Overview (市场概览)
 Real-time price tracking with professional Candlestick charts and key metrics cards.
-![Main Interface](demo_main.png.png)
+![Main Interface](ezgif-7aab32ad8bfb11a5.gif)
 *(Replace `assets/demo_main.png` with your actual screenshot path)*
 
 ### 2. Technical Analysis (技术指标)
