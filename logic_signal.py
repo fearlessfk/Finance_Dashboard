@@ -23,8 +23,12 @@ def get_investment_signal(df):
 
         # ========== 1. RSI 判断（列名一致，无需改） ==========
         rsi_value = df['RSI'].iloc[-1]
-        if pd.isna(rsi_value):
-            signal_reason = "RSI值无效（NaN）"
+        try:
+            if pd.isna(rsi_value) or rsi_value is None:
+                signal_reason = "RSI值无效（NaN或None）"
+                return signal_icon, status, signal_reason
+        except:
+            signal_reason = "RSI值无效"
             return signal_icon, status, signal_reason
         
         if rsi_value > 75:
@@ -51,7 +55,11 @@ def get_investment_signal(df):
             # 最新值（DIF对应原MACD，DEA对应原Signal_Line）
             dif_line = df['DIF'].iloc[-1]
             dea_line = df['DEA'].iloc[-1]
-            if pd.isna(dif_line) or pd.isna(dea_line):
+            try:
+                if pd.isna(dif_line) or pd.isna(dea_line) or dif_line is None or dea_line is None:
+                    signal_reason += "（MACD值无效）"
+                    return signal_icon, status, signal_reason
+            except:
                 signal_reason += "（MACD值无效）"
                 return signal_icon, status, signal_reason
             
