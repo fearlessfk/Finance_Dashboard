@@ -276,11 +276,19 @@ with tab1:
 
     df, info, news = get_data(st.session_state.ticker_symbol,st.session_state.ticker_period)
 
+    # 初始化信号变量（防止未定义错误）
+    signal_icon = "❓"
+    status = "无数据"
+    signal_reason = "无法获取股票数据"
+
     # 先统一计算技术指标，供上方指标卡与下方图表复用
     if not df.empty:
         df = calc_sma_50(df)
         df = calc_RSI(df)
         df = calc_MACD(df)
+
+        # ========== 新增：调用信号判断函数（此时df有所有指标数据） ==========
+        signal_icon, status, signal_reason = get_investment_signal(df)
 
     # ========== 顶部指标卡区域（类似彭博终端风格） ==========
     st.title(f"{info.get('shortName', ticker_symbol)} ({ticker_symbol}) 核心行情")
@@ -351,11 +359,6 @@ with tab1:
 
     # ========== 计算对应指标并绘图 ==========
     if not df.empty:
-        # 第二步：调用信号判断函数，更新信号变量
-        from logic_signal import get_investment_signal
-        signal_icon, status, signal_reason = get_investment_signal(df)  # 覆盖全局变量
-        # ========== 新增：调用信号判断函数（此时df有所有指标数据） ==========
-        signal_icon, status, signal_reason = get_investment_signal(df)
         # 根据当前指标计算对应数据
         current_ind = st.session_state.current_indicator
         if current_ind == "SMA50":
