@@ -10,7 +10,7 @@ DEFAULT_PERIOD_INDEX = 3  # 默认选1年
 SIDEBAR_INFO = '默认股票代码为AAPL，默认时间周期为1年'
 
 # 缓存配置（原始代码中的缓存时间）
-CACHE_TTL = 3600  # 1小时缓存
+CACHE_TTL = 7200  # 2小时缓存
 
 # 绘图配置（原始代码中的图表参数）
 CHART_HEIGHT = 600
