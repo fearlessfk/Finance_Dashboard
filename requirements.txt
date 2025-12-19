@@ -8,4 +8,3 @@ numpy==1.26.4      # 避开distutils，且兼容matplotlib
 matplotlib==3.8.4  # 适配numpy 1.26+
 setuptools==70.0.0
 wheel==0.44.0
-requests_cache
