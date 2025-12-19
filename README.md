@@ -11,18 +11,20 @@
 
 ## 📸 Project Demo (效果展示)
 
-### 1. Market Overview (市场概览)
-Real-time price tracking with professional Candlestick charts and key metrics cards.
+### 1. Market Overview & Indicators (Live Action)
+**Interactive Dashboard:** Real-time price tracking with Candlestick charts.Automated calculation of MACD, RSI, and Moving Averages. The system automatically flags Overbought/Oversold conditions.
+> **Note:** Below is a recording of the app running locally. (Live deployment may be unstable due to Yahoo Finance API limits).
 ![Main Interface](ezgif-7aab32ad8bfb11a5.gif)
 *(Replace `assets/demo_main.png` with your actual screenshot path)*
 
-### 2. Technical Analysis (技术指标)
-Automated calculation of **MACD**, **RSI**, and **Moving Averages**. The system automatically flags **Overbought/Oversold** conditions.
-![Indicators](demo_indicators.png.png)
+### 2. Return Analysis (收益率对比)
+**Performance Tracking:** Comparative analysis of Daily Returns and Cumulative Gains. Visualizing volatility and market performance.
+![Indicators](ezgif-7cf2ee04594b31db.gif)
 
-### 3. Return Analysis (收益率分析)
-Comparative analysis of daily returns and cumulative performance.
-![Returns](demo_analysis.png.png)
+### 3. Strategy & Custom Selection (自选股与策略)
+**Multi-Ticker Analysis:** Compare different stocks (e.g., AAPL vs. NVDA) and evaluate basic trading strategy signals.
+
+![Returns](ezgif-7f61a4d134f5b724.gif)
 
 ---
 
