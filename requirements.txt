@@ -1,12 +1,9 @@
-# 核心框架
+# requirements.txt（适配 Python 3.13 的极简版本）
 streamlit==1.52.2
-
-# 金融数据/绘图核心依赖
-yfinance==0.1.74
-mplfinance==0.12.9b7  # 适配Python3.9的稳定版
-plotly==5.17.0        # 与streamlit/mplfinance无冲突的版本
-
-# 数据处理基础包（版本向下兼容）
-pandas==1.5.3
-numpy==1.23.5
-matplotlib==3.7.1   
+yfinance==0.2.31       # 新版yfinance兼容3.13
+mplfinance==0.12.10b0  # 最新版mplfinance适配3.13
+plotly==6.5.0          # Streamlit预装版本，无冲突
+pandas==2.3.3          # 3.13兼容版
+numpy==2.3.5           # 3.13兼容版
+matplotlib==3.8.0      # 3.13兼容版
+setuptools>=65.0.0     # 解决distutils缺失问题
