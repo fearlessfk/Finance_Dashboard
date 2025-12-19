@@ -1,6 +1,6 @@
 # 适配Python 3.13的无冲突依赖（根目录）
 streamlit==1.38.0  # 降低版本避免高版本依赖冲突
-yfinance==0.2.31
+yfinance>=0.2.40
 mplfinance==0.12.10b0
 plotly==6.5.0
 pandas==2.2.2      # 适配numpy 1.26+
@@ -8,3 +8,4 @@ numpy==1.26.4      # 避开distutils，且兼容matplotlib
 matplotlib==3.8.4  # 适配numpy 1.26+
 setuptools==70.0.0
 wheel==0.44.0
+requests_cache

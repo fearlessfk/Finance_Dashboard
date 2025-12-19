@@ -3,7 +3,20 @@ import yfinance as yf
 import pandas as pd
 import time
 import random
+import requests_cache  # 新增
+from datetime import timedelta  # 新增
 from config import CACHE_TTL
+
+# 1. 创建一个缓存会话
+# 这会在内存里记住 Yahoo 的数据，防止短时间内重复请求
+session = requests_cache.CachedSession(
+    'yfinance.cache', 
+    expire_after=timedelta(hours=1)  # 数据保留1小时
+)
+
+# 2. 给请求加个“身份证” (User-Agent)
+# 假装自己是 Chrome 浏览器
+session.headers['User-agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 
 
 @st.cache_data(ttl=CACHE_TTL)  # 1小时缓存，减少请求（原始注释保留）
@@ -17,7 +30,7 @@ def get_data(symbol, period):
     for attempt in range(max_retries):
         try:
             # 函数内局部变量stock，外部无需访问（原始注释保留）
-            stock_inner = yf.Ticker(symbol)
+            stock_inner = yf.Ticker(symbol, session=session)  # 使用缓存会话
             hist_df = stock_inner.history(period=period)
             info = stock_inner.info or {}  # 确保info是字典（原始注释保留）
             news = stock_inner.news or []  # 确保news是列表（原始注释保留）
@@ -43,7 +56,7 @@ def get_balance_sheet(ticker_symbol):
     for attempt in range(max_retries):
         try:
             # 重新初始化 Ticker 对象以获取资产负债表（避免缓存问题）（原始注释保留）
-            stock_inner = yf.Ticker(ticker_symbol)
+            stock_inner = yf.Ticker(ticker_symbol, session=session)  # 使用缓存会话
             # 获取股票的资产负债表数据（原始注释保留）
             balance_sheet = stock_inner.balance_sheet
             return balance_sheet
