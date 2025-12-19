@@ -1,7 +1,3 @@
-# 网络代理配置（原始代码中的代理地址）
-PROXY_HTTP = "http://127.0.0.1:7890"
-PROXY_HTTPS = "http://127.0.0.1:7890"
-
 # 页面配置（原始代码中的页面设置）
 PAGE_LAYOUT = 'wide'
 PAGE_TITLE = "Stock Dashboard"

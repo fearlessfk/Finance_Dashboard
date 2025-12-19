@@ -1,12 +1,7 @@
 import streamlit as st
 import yfinance as yf
 import pandas as pd
-import os
-from config import PROXY_HTTP, PROXY_HTTPS, CACHE_TTL
-
-# 设置环境变量，让 Python 走你的本地代理（原始代码逻辑）
-os.environ["http_proxy"] = PROXY_HTTP
-os.environ["https_proxy"] = PROXY_HTTPS
+from config import CACHE_TTL
 
 
 @st.cache_data(ttl=CACHE_TTL)  # 1小时缓存，减少请求（原始注释保留）
